@@ -39,6 +39,15 @@ for(b = 0; b < 10;){
 let number1 = prompt("Insert first number: ");
 let number2 = prompt("Insert second number: ");
 let number3 = prompt("Insert third number: ");
-if(numb){
-
+if(number1 > number2 && number3){
+    alert("First Number")
+}
+else if(number2 > number1 && number3){
+    alert("Second Number")
+}
+else if(number3 > number1 && number2){
+    alert("Third Number");
+}
+else{
+    alert("what the heeeeeeeeeeeeeeeeeeeeeeeeeeeeell🤯")
 }
