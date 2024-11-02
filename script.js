@@ -18,9 +18,9 @@ let salaries = {
     ann: 160,
     pete: 130,
 }
-let sum = salaries.john + salaries.ann + salaries.pete
+let sum = 0;
 for(key in salaries){
-    alert(sum);
+    alert(sum += salaries[key]);
 }
 alert(0)
 
@@ -28,13 +28,19 @@ let obj = {
     am: 10,
     em: 20,
     om: 30,
+    popds: "dsds"
 };
 function multiplyNumeric(obj){
-    for(key in obj){
-        if(key = Number){
-            alert(key * 2)
+    for(let key in obj){
+        if(typeof obj[key] == 'number'){
+            alert(obj[key] *= 2);
+        }
+        else if(typeof obj[key] == 'string'){
+            alert(obj[key]);
+        }
+        else{
+            alert("Пусто!");
         }
     }
-    alert("Пусто!");
 }
 multiplyNumeric(obj);
