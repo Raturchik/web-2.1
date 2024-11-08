@@ -47,45 +47,68 @@
 // console.log(account.getBalance(5));
 
 // тут дзшка+
-let person = {
-    name: 'John',
-    age: 28,
-    greet(){
-        alert("Hello " + this.name);
-    },
-    haveBirthday(date){
-        date = prompt("what day is today?");
-        if(date === "15.11"){
-            alert("Happy birthday!");
-            this.age++;
-            console.log(this.age);
+// let person = {
+//     name: 'John',
+//     age: 28,
+//     greet(){
+//         alert("Hello " + this.name);
+//     },
+//     haveBirthday(date){
+//         date = prompt("what day is today?");
+//         if(date === "15.11"){
+//             alert("Happy birthday!");
+//             this.age++;
+//             console.log(this.age);
+//         }
+//         else{
+//             alert("the time has not come yet");
+//             console.log(this.age);
+//         }
+//     }
+// }
+// person.greet();
+// person.haveBirthday();
+
+// let counter = {
+//     count: 0,
+//     increment(){
+//         this.count++;
+//         console.log(this.count);
+//     },
+//     decrement(){
+//         this.count--;
+//         console.log(this.count);
+//     },
+//     reset(){
+//         this.count = 0;
+//         console.log(this.count);
+        
+//     },
+// }
+
+// counter.increment();
+// counter.decrement();
+// counter.reset();
+
+let settings = {
+    userName: "", 
+    value: "",
+    setProperty(userName, value){
+        userName = prompt("Укажите имя свойства: ");
+        if(settings.hasOwnProperty("userName") === true){
+            this.userName = userName;
         }
         else{
-            alert("the time has not come yet");
-            console.log(this.age);
+            alert("Такого параметра не существует");
         }
-    }
-}
-person.greet();
-person.haveBirthday();
-
-let counter = {
-    count: 0,
-    increment(){
-        this.count++;
-        console.log(this.count);
+        value = prompt("Укажите значение свойства:");
+        if(settings.hasOwnProperty("value") === true){
+            this.value = value;               
+        }
+        else{
+            alert("Такого параметра не существует");
+        }
     },
-    decrement(){
-        this.count--;
-        console.log(this.count);
-    },
-    reset(){
-        this.count = 0;
-        console.log(this.count);
-        
-    },
-}
-
-counter.increment();
-counter.decrement();
-counter.reset();
+};
+settings.setProperty();
+console.log(settings);
