@@ -47,48 +47,48 @@
 // console.log(account.getBalance(5));
 
 // тут дзшка+
-// let person = {
-//     name: 'John',
-//     age: 28,
-//     greet(){
-//         alert("Hello " + this.name);
-//     },
-//     haveBirthday(date){
-//         date = prompt("what day is today?");
-//         if(date === "15.11"){
-//             alert("Happy birthday!");
-//             this.age++;
-//             console.log(this.age);
-//         }
-//         else{
-//             alert("the time has not come yet");
-//             console.log(this.age);
-//         }
-//     }
-// }
-// person.greet();
-// person.haveBirthday();
+let person = {
+    name: 'John',
+    age: 28,
+    greet(){
+        alert("Hello " + this.name);
+    },
+    haveBirthday(date){
+        date = prompt("what day is today?");
+        if(date === "15.11"){
+            alert("Happy birthday!");
+            this.age++;
+            console.log(this.age);
+        }
+        else{
+            alert("the time has not come yet");
+            console.log(this.age);
+        }
+    }
+}
+person.greet();
+person.haveBirthday();
 
-// let counter = {
-//     count: 0,
-//     increment(){
-//         this.count++;
-//         console.log(this.count);
-//     },
-//     decrement(){
-//         this.count--;
-//         console.log(this.count);
-//     },
-//     reset(){
-//         this.count = 0;
-//         console.log(this.count);
+let counter = {
+    count: 0,
+    increment(){
+        this.count++;
+        console.log(this.count);
+    },
+    decrement(){
+        this.count--;
+        console.log(this.count);
+    },
+    reset(){
+        this.count = 0;
+        console.log(this.count);
         
-//     },
-// }
+    },
+}
 
-// counter.increment();
-// counter.decrement();
-// counter.reset();
+counter.increment();
+counter.decrement();
+counter.reset();
 
 let settings = {
     userName: "", 
