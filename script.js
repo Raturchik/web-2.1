@@ -1,114 +1,35 @@
-// const original = {
-//     a: 1,
-//     b:{
-//         c:2,
-//     }
-// };
-
-// function shallowClone(clone){
-//     for(let key in original){
-//         clone[key] = original[key];
-//     }
-//     return clone;
+// 1
+// let arrayOfStr = ['слово','word','yryry'];
+// function arrayPush(arr){
+//     return arr.push("hello");
 // }
-
-// const clone = shallowClone(original);
-// console.log(clone);
-// clone.b.c = 3;
-// console.log(original);
-
-// let rectangle = {
-//     width: 10,
-//     height: 5,
-//     getArea(){
-//         return this.width * this.height;
-//     },
-//     getPerimetr(){
-//         return (this.width + this.height) * 2;
-//     },
-// }
-
-// let account = {
-//     balance: 0,
-//     deposit(amount){
-//         return amount + this.balance;
-//     },
-//     withdraw(amount){
-//         return this.balance - amount;
-//     },
-//     getBalance(){
-//         return this.balance;
-//     }
-// };
-// console.log(rectangle.getArea());
-// console.log(rectangle.getPerimetr());
-// console.log(account.deposit(5));
-// console.log(account.withdraw(5));
-// console.log(account.getBalance(5));
-
-// тут дзшка+
-let person = {
-    name: 'John',
-    age: 28,
-    greet(){
-        alert("Hello " + this.name);
-    },
-    haveBirthday(date){
-        date = prompt("what day is today?");
-        if(date === "15.11"){
-            alert("Happy birthday!");
-            this.age++;
-            console.log(this.age);
-        }
-        else{
-            alert("the time has not come yet");
-            console.log(this.age);
-        }
+// arrayPush(arrayOfStr);
+// console.log(arrayOfStr);
+//2
+let arrayOfInt = [1, 2, 3, 4, 5];
+let sum = 0;
+function arraySolving(arr1){
+    for (let number of arr1){
+        sum += number;
     }
+    return sum;
 }
-person.greet();
-person.haveBirthday();
+arraySolving(arrayOfInt);
+console.log(sum);
+//3
 
-let counter = {
-    count: 0,
-    increment(){
-        this.count++;
-        console.log(this.count);
-    },
-    decrement(){
-        this.count--;
-        console.log(this.count);
-    },
-    reset(){
-        this.count = 0;
-        console.log(this.count);
-        
-    },
+let sum1 = 0;
+function sumInput(){
+  let arr = [];
+  for (i = 0; i < arr.length; i++){
+    arr[i] = prompt("Insert value");
+  };
+    if(arr[i] != Number && arr[i] === "" && arr[i] === undefined){
+      alert("Inserted value is not a number!");
+      return;
+    }    
+    sum1 += arr[i];
+    return sum1;
 }
-
-counter.increment();
-counter.decrement();
-counter.reset();
-
-let settings = {
-    userName: "", 
-    value: "",
-    setProperty(userName, value){
-        userName = prompt("Укажите имя свойства: ");
-        if(settings.hasOwnProperty("userName") === true){
-            this.userName = userName;
-        }
-        else{
-            alert("Такого параметра не существует");
-        }
-        value = prompt("Укажите значение свойства:");
-        if(settings.hasOwnProperty("value") === true){
-            this.value = value;               
-        }
-        else{
-            alert("Такого параметра не существует");
-        }
-    },
-};
-settings.setProperty();
-console.log(settings);
+sumInput();
+console.log(sum1);
