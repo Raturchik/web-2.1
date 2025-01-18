@@ -1,24 +1,12 @@
-//1
-let deleteButton = document.querySelector(".deleter");
-let divDeleted = document.querySelector(".invisible");
+function setCookie(name, value, expiresDays){
+    let encodeName = encodeURIComponent(name);
+    let encodeValue = encodeURIComponent(value);
 
-function deleteDiv(){
-    divDeleted.classList.toggle("open");
+    let date = new Date(Date.now() + 86400e3 * expiresDays);
+    date = date.toUTCString();
+
+    document.cookie = `${encodeName}=${encodeValue}, expires=${date}`;
 }
 
-deleteButton.addEventListener("click", deleteDiv);
-//2
-let hideButton = document.querySelector(".hide");
-
-function hide(){
-    hideButton.style.display = 'none';
-}
-
-hideButton.addEventListener("click", hide);
-
-let list = document.querySelector(".list");
-//popo
-let selectedLi;
-function fs(){
-    
-}
+setCookie("username", "John Doe", 30);
+console.log(document.cookie);
