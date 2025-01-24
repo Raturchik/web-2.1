@@ -1,7 +1,11 @@
 //1
-function changeText(){
-    document.getElementsByTagName('button').textContent = "Нажми на меня";
-}
+// function changeText(){
+//     document.getElementsByTagName('button').textContent = "Нажми на меня";
+// }
+let but = new Array();
+but.forEach(but => {
+    but.getElementsByTagName("button").textContent = "Нажми на меня";
+});
 //другого способа не нашел((
 //2
 let container = document.getElementsByClassName("container");
