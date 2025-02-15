@@ -92,17 +92,31 @@
 // ]).then((values) => console.log(values));   
 
 
-let promise1 = new Promise((resolve) => setTimeout(resolve("Промис 1 выполнен"), 1000));
-let promise2 = new Promise((resolve, reject) => setTimeout(resolve("Промис 2 отклонен"), 2000));
-let promise3 = new Promise((resolve) => setTimeout(resolve("Промис 3 выполнен"), 3000));
+// let promise1 = new Promise((resolve) => setTimeout(resolve("Промис 1 выполнен"), 1000));
+// let promise2 = new Promise((resolve, reject) => setTimeout(resolve("Промис 2 отклонен"), 2000));
+// let promise3 = new Promise((resolve) => setTimeout(resolve("Промис 3 выполнен"), 3000));
 
-let allPromises = [promise1, promise2, promise3];
+// let allPromises = [promise1, promise2, promise3];
 
-Promise.allSettled(allPromises).then((promisesData) => {
-        promisesData.forEach((item, index) => {
-            console.log(`Promise ${index + 1}: ${item.status} - ${item.values || item.reason}`); 
-        });
-    });
+// Promise.allSettled(allPromises).then((promisesData) => {
+//         promisesData.forEach((item, index) => {
+//             console.log(`Promise ${index + 1}: ${item.status} - ${item.values || item.reason}`); 
+//         });
+//     });
 
-Promise.all(allPromises).then((data) => console.log(data));
-Promise.race(allPromises).then((data) => console.log(data));
+// Promise.all(allPromises).then((data) => console.log(data));
+// Promise.race(allPromises).then((data) => console.log(data));
+
+async function delay(milliseconds) {
+    return new Promise(resolve => setTimeout(() => {
+     resolve()    
+    }, milliseconds))
+    
+}
+
+async function runDelay() {
+    await delay(2000);
+    console.log("Задержка завершена");
+}
+
+runDelay()
