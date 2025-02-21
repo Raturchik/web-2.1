@@ -70,7 +70,7 @@
 
 // promise.then((value) => (
 //     console.log(value)
-    
+
 // ));
 
 // let promise1 = new Promise((resolve, reject) => {
@@ -95,9 +95,18 @@
 // let promise1 = new Promise((resolve) => setTimeout(resolve("Промис 1 выполнен"), 1000));
 // let promise2 = new Promise((resolve, reject) => setTimeout(resolve("Промис 2 отклонен"), 2000));
 // let promise3 = new Promise((resolve) => setTimeout(resolve("Промис 3 выполнен"), 3000));
+// // let promise1 = new Promise((resolve) => setTimeout(resolve("Промис 1 выполнен"), 1000));
+// // let promise2 = new Promise((resolve, reject) => setTimeout(resolve("Промис 2 отклонен"), 2000));
+// // let promise3 = new Promise((resolve) => setTimeout(resolve("Промис 3 выполнен"), 3000));
 
 // let allPromises = [promise1, promise2, promise3];
+// // let allPromises = [promise1, promise2, promise3];
 
+// Promise.allSettled(allPromises).then((promisesData) => {
+//         promisesData.forEach((item, index) => {
+//             console.log(`Promise ${index + 1}: ${item.status} - ${item.values || item.reason}`); 
+//         });
+//     });
 // Promise.allSettled(allPromises).then((promisesData) => {
 //         promisesData.forEach((item, index) => {
 //             console.log(`Promise ${index + 1}: ${item.status} - ${item.values || item.reason}`); 
@@ -107,16 +116,70 @@
 // Promise.all(allPromises).then((data) => console.log(data));
 // Promise.race(allPromises).then((data) => console.log(data));
 
-async function delay(milliseconds) {
-    return new Promise(resolve => setTimeout(() => {
-     resolve()    
-    }, milliseconds))
+
+
+// async function delay(milliseconds) {
+//     return new Promise(resolve => setTimeout(() => {
+//      resolve()    
+//     }, milliseconds))
     
-}
+// }
 
-async function runDelay() {
-    await delay(2000);
-    console.log("Задержка завершена");
-}
+// async function runDelay() {
+//     await delay(2000);
+//     console.log("Задержка завершена");
+// }
 
-runDelay()
+// Promise.all(allPromises).then((data) => console.log(data));
+// Promise.race(allPromises).then((data) => console.log(data));
+// runDelay()
+
+// ДЗ
+//1
+
+
+// async function fetchUser(userId) {
+//     try{
+//         console.log("Fetching started...");
+//         let responce = await fetch(`https://jsonplaceholder.typicode.com/users/${userId}`);
+//         let data = responce.json();
+//         console.log("Data:", data);
+        
+//     }
+//     catch(error){
+//         console.error("Error:", error);
+//     }
+//   }
+//   async function runFetch() {
+//     await fetchUser(1); // Запрос данных пользователя с ID 1
+//   }
+//   runFetch();
+  
+
+//2
+
+async function createUser(user){
+    try{
+        let user = {};
+        fetch('https://jsonplaceholder.typicode.com/users', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: user({
+                name: "John",
+                username: "CoolJohn1134",
+                email: "emailexample@gmail.com",
+            })
+          })
+            let responce = await fetch("https://jsonplaceholder.typicode.com/users");
+            let data = responce.json();
+            console.log("Data:", data);
+    }
+        catch(error){
+            console.error("Error:", error);
+            
+        }
+      
+}
+createUser();
